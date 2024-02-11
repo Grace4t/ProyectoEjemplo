@@ -9,7 +9,8 @@ class Platillo:
         self.ingredientes = ingredientes
         self.termino = termino
         self.categoria = categoria
-        
+def editar_menu():
+    print("desde editar_menu()")        
 def crear_platillo():
     nombre_platillo = input("Escribe el nombre: \r\n") #Nombre del archivo/platillo
     existe = existe_platillo(nombre_platillo)
@@ -30,10 +31,8 @@ def crear_platillo():
             archivo.writelines("Los ingredientes son: " + platillo.ingredientes + "\r")
             archivo.write("El termino del platillo es: " + platillo.termino + "\r")
             archivo.write("La categoria de comida es: " + platillo.categoria + "\r")
-                    
     else:
         print("El platilla ya esta creado")
-
 
 def mostrar_menu():
     print("**********BIENVENIDO AL MENÚ**********")
@@ -51,7 +50,7 @@ def seleccionar_opcion():
             crear_platillo()
             pregunta == False
         elif opcion == 2:
-            print("Editar platillo")
+            editar_menu()
             pregunta ==  False
         elif opcion == 3:
             print("Mostrar platillo")
@@ -78,5 +77,6 @@ def app():
     crear_carpeta()
     mostrar_menu()
     seleccionar_opcion()
+    editar_menu()
     
 app()
