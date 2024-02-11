@@ -26,16 +26,30 @@ def crear_platillo():
 
             #Todavia no escribe porque no le hemos mandado los  datos al método para guardalos
             #referencia a la Class Contacto NombredelObjeto.Nombredelatributo
-            archivo.write("El nombre del platillo es: "+ platillo.nombre + "\r\n")
-            archivo.write("Los ingredientes son :" + platillo.ingredientes+ "\r\n")
-            archivo.write("El termino del platillo es :" + platillo.termino+ "\r\n")
-            archivo.write("La categoria de comida es :" + platillo.categoria+ "\r\n")
+            archivo.write("El nombre del platillo es: "+ platillo.nombre + "\r")
+            archivo.writelines("Los ingredientes son: " + platillo.ingredientes+ "\r")
+            archivo.write("El termino del platillo es: " + platillo.termino+ "\r")
+            archivo.write("La categoria de comida es: " + platillo.categoria+ "\r")
+
+            #Que hacer si queremos escribir más texto ?
+        pregunta = True
+        while pregunta == True:
+            opcion = int(input('\nDesea seguir escrbiendo? si = 1, no = 0: '))
+            if opcion == 1 :
+                print("Continuamos entonces...\r\n")
+                with open(DIRECTORIO + nombre_platillo + EXTENSION, "w") as archivo:
+                    ingredientes_platillo = input("qUE MAS DESEA AGREGAR: \r\n")
+                    archivo.writelines("Los ingredientes son: " + platillo.ingredientes+ "\r")
+                    pregunta = False
+            elif opcion == 0 :
+                print("Gracias por registrar el platillo\r\n")
+                print('-'* 40)
+                pregunta = False
+                break #termina el bucle
+            
             #Mostrar mensaje  
             print("\r\nContacto Agregado Exitosamente\r\n")               
     else:
-        print("El contacto ya existe.")
-
-    
         print("El platilla ya esta creado")
 
 
