@@ -3,6 +3,9 @@ import os
 DIRECTORIO = "dir/"
 EXTENCION = ".txt"
 
+def crear_platillo():
+    print("Desde crear platillo")
+
 def mostrar_menu():
     print("SELECCIONE UNA OPCIÓN DEL MENÚ")
     print("1. Crear platillo")
@@ -16,7 +19,7 @@ def seleccionar_opcion():
     while pregunta == True:
         opcion = int(input("Selecciona una opción del Menú:"))
         if opcion == 1:
-            print("Crear platillo")
+            crear_platillo()
             pregunta == False
         elif opcion == 2:
             print("Editar platillo")
@@ -43,5 +46,6 @@ def app():
     crear_carpeta()
     mostrar_menu()
     seleccionar_opcion()
+    #crear_platillo()
 
 app()
