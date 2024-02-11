@@ -11,13 +11,13 @@ class Platillo:
         self.categoria = categoria
         
 def crear_platillo():
-    nombre_platillo = input("Escribe el nombre del platillo:")
+    nombre_platillo = input("Escribe el nombre: \r\n") #Nombre del archivo/platillo
     existe = existe_platillo(nombre_platillo)
     #crear el archivo con el nombre del archivo
     if not existe:
         with open(DIRECTORIO + nombre_platillo + EXTENSION, "w") as archivo:
-            archivo.write()#Aqui no le estoy mandado nada para que escriba, por lo que hay que llamar a la clase con sus atributos
             #Escribir los otros campos en el archivo creado
+            nombre_platillo = input("Escribe el nombre del platillo: \r\n")
             ingredientes_platillo = input("Escribe los ingredientes del platillo: \r\n")
             termino_platillo = input("Escribe el termino del platillo: \r\n")
             categoria_platillo = input("Escribe la categoria del platillo: \r\n")
@@ -26,9 +26,10 @@ def crear_platillo():
 
             #Todavia no escribe porque no le hemos mandado los  datos al método para guardalos
             #referencia a la Class Contacto NombredelObjeto.Nombredelatributo
-            archivo.write(platillo.ingredientes)
-            archivo.write(platillo.termino)
-            archivo.write(platillo.categoria)
+            archivo.write("El nombre del platillo es: "+ platillo.nombre + "\r\n")
+            archivo.write("Los ingredientes son :" + platillo.ingredientes+ "\r\n")
+            archivo.write("El termino del platillo es :" + platillo.termino+ "\r\n")
+            archivo.write("La categoria de comida es :" + platillo.categoria+ "\r\n")
             #Mostrar mensaje  
             print("\r\nContacto Agregado Exitosamente\r\n")               
     else:
@@ -39,17 +40,17 @@ def crear_platillo():
 
 
 def mostrar_menu():
-    print("SELECCIONE UNA OPCIÓN DEL MENÚ")
+    print("**********BIENVENIDO AL MENÚ**********")
     print("1. Crear platillo")
     print("2. Editar platillo")
     print("3. Mostrar platillo")
     print("4. Buscar platillo")
-    print("5. Eliminar platillo")
+    print("5. Eliminar platillo \n")
     
 def seleccionar_opcion():
     pregunta = True
     while pregunta == True:
-        opcion = int(input("Selecciona una opción del Menú:"))
+        opcion = int(input("Selecciona una opción del Menú:\r\n"))
         if opcion == 1:
             crear_platillo()
             pregunta == False
