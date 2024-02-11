@@ -1,13 +1,23 @@
 import os
 #variables
 DIRECTORIO = "dir/"
-EXTENCION = ".txt"
+EXTENSION = ".txt"
 
+class Platillo:
+    def __init__(self,nombre,ingredientes, termino, costo):
+        self.nombre = nombre
+        self.ingredientes = ingredientes
+        self.termino = termino
+        self.costo = costo
 def crear_platillo():
     nombre_platillo = input("Escribe el nombre del platillo:")
+    existe = existe_contacto(nombre_platillo)
     #crear el archivo con el nombre del archivo
-    with open(DIRECTORIO +nombre_platillo + EXTENCION, "w") as archivo:
-        archivo.write()
+    if not existe:
+        with open(DIRECTORIO + nombre_platillo + EXTENSION, "w") as archivo:
+            archivo.write()
+    else:
+        print("El platilla ya esta creado")
 
 
 def mostrar_menu():
@@ -45,6 +55,9 @@ def crear_carpeta():
         os.makedirs(DIRECTORIO)
     except OSError as error:
         print(f"La carpeta llamada {DIRECTORIO} fue creada exitosamente\r\n")
+
+def existe_contacto(nombre):
+   return os.path.isfile(DIRECTORIO + nombre + EXTENSION)
 
 def app():
     crear_carpeta()
