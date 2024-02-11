@@ -4,7 +4,11 @@ DIRECTORIO = "dir/"
 EXTENCION = ".txt"
 
 def crear_platillo():
-    print("Desde crear platillo")
+    nombre_platillo = input("Escribe el nombre del platillo:")
+    #crear el archivo con el nombre del archivo
+    with open(DIRECTORIO +nombre_platillo + EXTENCION, "w") as archivo:
+        archivo.write()
+
 
 def mostrar_menu():
     print("SELECCIONE UNA OPCIÓN DEL MENÚ")
@@ -46,6 +50,5 @@ def app():
     crear_carpeta()
     mostrar_menu()
     seleccionar_opcion()
-    #crear_platillo()
-
+    
 app()
