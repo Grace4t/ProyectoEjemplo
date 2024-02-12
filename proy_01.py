@@ -119,7 +119,8 @@ def crear_carpeta():
         os.path.exists(DIRECTORIO)
         os.makedirs(DIRECTORIO)
     except OSError as error:
-        print(f"La carpeta llamada {DIRECTORIO} fue creada exitosamente\r\n")
+        #print(f"La carpeta llamada {DIRECTORIO} fue creada exitosamente\r\n")
+        print("\r")
 
 def existe_platillo(nombre):
    return os.path.isfile(DIRECTORIO + nombre + EXTENSION)
