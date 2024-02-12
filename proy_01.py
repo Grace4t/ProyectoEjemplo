@@ -9,8 +9,29 @@ class Platillo:
         self.ingredientes = ingredientes
         self.termino = termino
         self.categoria = categoria
+        #self.comentario = comentario
 def editar_menu():
-    print("desde editar_menu()")        
+    #Que platillo se desea editar
+    nombre_anterior = input("Escribe el nombre que desea editar: \r\n") #Nombre del archivo/platillo
+    existe = existe_platillo(nombre_anterior)
+    #crear el archivo con el nombre del archivo
+    if existe:
+        #print("Si existe el archivo, usted puede agregar comentarios al platillo")
+        with open(DIRECTORIO + nombre_anterior + EXTENSION, "a+") as archivo:
+            nombre_platillo= input("\r\Agregar un nombre: \r\n")
+            ingredientes_platillo= input("\r\Agregar un Ingrediente: \r\n")
+            termino_platillo= input("\r\Agregar un termino: \r\n")
+            categoria_platillo= input("\r\Agregar una categoria: \r\n")
+            #Instanciar el construcor de la clase 
+            platillo = Platillo(nombre_platillo, ingredientes_platillo, termino_platillo, categoria_platillo)
+            archivo.write("Area modificada: " + platillo.nombre + "\r\n") 
+            archivo.write("Area modificada: " + platillo.ingredientes + "\r\n") 
+            archivo.write("Area modificada: " + platillo.termino + "\r\n") 
+            archivo.write("Area modificada: " + platillo.categoria + "\r\n") 
+            print("\r\n Comentarios agregados exitosamente")                  
+    else:
+        print("Ese platillo no existe, no puede ser modificado")
+    app()
 def crear_platillo():
     nombre_platillo = input("Escribe el nombre: \r\n") #Nombre del archivo/platillo
     existe = existe_platillo(nombre_platillo)
@@ -28,7 +49,7 @@ def crear_platillo():
             #Todavia no escribe porque no le hemos mandado los  datos al método para guardalos
             #referencia a la Class Contacto NombredelObjeto.Nombredelatributo
             archivo.write("El nombre del platillo es: "+ platillo.nombre + "\r")
-            archivo.writelines("Los ingredientes son: " + platillo.ingredientes + "\r")
+            archivo.write("Los ingredientes son: " + platillo.ingredientes + "\r")
             archivo.write("El termino del platillo es: " + platillo.termino + "\r")
             archivo.write("La categoria de comida es: " + platillo.categoria + "\r")
     else:
