@@ -1,8 +1,0 @@
-El nombre del platillo es: TACOS DORADOS
-Los ingredientes son: TORTILLA, QUESO, JAMON, PAPA, CHILE, AGUACATE, LECHUFA
-El termino del platillo es: FRITO
-La categoria de comida es: TRADICIONAL MEXICANOArea modificada: taquitos muy ricos
-Area modificada: tacos de suadero
-Area modificada: limon, salsa 
-Area modificada: well done
-Area modificada: nomnre otra

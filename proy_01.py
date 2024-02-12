@@ -10,6 +10,8 @@ class Platillo:
         self.termino = termino
         self.categoria = categoria
         #self.comentario = comentario
+def mostrar_platillo():
+    print("Desde mostrar_platillo()")
 def editar_menu():
     #Que platillo se desea editar
     nombre_anterior = input("Escribe el nombre que desea editar: \r\n") #Nombre del archivo/platillo
@@ -24,10 +26,10 @@ def editar_menu():
             categoria_platillo= input("\r\Agregar una categoria: \r\n")
             #Instanciar el construcor de la clase 
             platillo = Platillo(nombre_platillo, ingredientes_platillo, termino_platillo, categoria_platillo)
-            archivo.write("Area modificada: " + platillo.nombre + "\r\n") 
-            archivo.write("Area modificada: " + platillo.ingredientes + "\r\n") 
-            archivo.write("Area modificada: " + platillo.termino + "\r\n") 
-            archivo.write("Area modificada: " + platillo.categoria + "\r\n") 
+            archivo.write("Area modificada: " + platillo.nombre + "\r") 
+            archivo.write("Area modificada: " + platillo.ingredientes + "\r") 
+            archivo.write("Area modificada: " + platillo.termino + "\r") 
+            archivo.write("Area modificada: " + platillo.categoria + "\r") 
             print("\r\n Comentarios agregados exitosamente")                  
     else:
         print("Ese platillo no existe, no puede ser modificado")
@@ -74,7 +76,7 @@ def seleccionar_opcion():
             editar_menu()
             pregunta ==  False
         elif opcion == 3:
-            print("Mostrar platillo")
+            mostrar_platillo()
             pregunta ==  False
         elif opcion == 4:
             print("Buscar platillo")

@@ -1,4 +1,0 @@
-El nombre del platillo es: Quesadillas de tortillaLos ingredientes son: queso, torilla, crema, salsa, rellenoEl termino del platillo es: doradoLa categoria de comida es: basicoArea modificada: QUESADILLAS DE QUESO
-Area modificada: 
-Area modificada: 
-Area modificada: COMIDA MEXICANA
