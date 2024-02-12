@@ -11,7 +11,15 @@ class Platillo:
         self.categoria = categoria
         #self.comentario = comentario
 def mostrar_platillo():
-    print("Desde mostrar_platillo()")
+    # 1.-ASEGURARNOS DE QUE EXISTA EL PLATILLO
+    nombre_anterior = input("Escribe el nombre que desea editar: \r\n") #Nombre del archivo/platillo
+    existe = existe_platillo(nombre_anterior)
+    if existe:
+        #LEER EL ARCHIVO SE LECCIONADO
+        with open (DIRECTORIO + nombre_anterior + EXTENSION) as archivo:
+            print(archivo.read())
+    else:
+        print("No existe")
 def editar_menu():
     #Que platillo se desea editar
     nombre_anterior = input("Escribe el nombre que desea editar: \r\n") #Nombre del archivo/platillo
@@ -56,6 +64,7 @@ def crear_platillo():
             archivo.write("La categoria de comida es: " + platillo.categoria + "\r")
     else:
         print("El platilla ya esta creado")
+    app()
 
 def mostrar_menu():
     print("**********BIENVENIDO AL MENÚ**********")
