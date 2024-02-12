@@ -9,7 +9,6 @@ class Platillo:
         self.ingredientes = ingredientes
         self.termino = termino
         self.categoria = categoria
-        #self.comentario = comentario
 def eliminar_platillo():
     eliminar = input("Escribe el platillo que deseas eliminar: \r\n") 
     try:
