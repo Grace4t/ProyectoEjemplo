@@ -10,6 +10,14 @@ class Platillo:
         self.termino = termino
         self.categoria = categoria
         #self.comentario = comentario
+def eliminar_platillo():
+    eliminar = input("Escribe el platillo que deseas eliminar: \r\n") 
+    try:
+        os.remove(DIRECTORIO +eliminar+ EXTENSION)
+        print(f"PLATILLO ' {eliminar} ' FUE ELIMINADO CORRECTAMENTE")
+    except:
+        print(f"ERROR, EL CONTACTO NO EXISTE {IOError}")
+    app()
 def buscar_platillo():
     nombre_buscar = input("Escribe el nombre del platillo que deseas buscar: \r\n") 
     try:
@@ -102,7 +110,7 @@ def seleccionar_opcion():
             buscar_platillo()
             pregunta ==  False
         elif opcion == 5:
-            print("Eliminar platillo")
+            eliminar_platillo()
             pregunta ==  False
         else:
             print(f"Opción no valida")
