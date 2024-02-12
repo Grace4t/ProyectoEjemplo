@@ -10,6 +10,17 @@ class Platillo:
         self.termino = termino
         self.categoria = categoria
         #self.comentario = comentario
+def buscar_platillo():
+    nombre_buscar = input("Escribe el nombre del platillo que deseas buscar: \r\n") 
+    try:
+        with open(DIRECTORIO+nombre_buscar+EXTENSION) as archivo:
+            print("platillo encontrado!")
+            for linea in archivo:
+                print(linea.rstrip())
+    except IOError:
+        print(f"ERROR, EL CONTACTO NO EXISTE {IOError}")
+    app()
+        
 def mostrar_platillo():
     # 1.-ASEGURARNOS DE QUE EXISTA EL PLATILLO
     nombre_anterior = input("Escribe el nombre que desea editar: \r\n") #Nombre del archivo/platillo
@@ -88,7 +99,7 @@ def seleccionar_opcion():
             mostrar_platillo()
             pregunta ==  False
         elif opcion == 4:
-            print("Buscar platillo")
+            buscar_platillo()
             pregunta ==  False
         elif opcion == 5:
             print("Eliminar platillo")
